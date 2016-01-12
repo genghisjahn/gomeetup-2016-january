@@ -1,0 +1,42 @@
+Hello, Gophers
+Philly GoMeetup
+12 Jan 2016
+
+Jon Wear
+DramaFever.com
+@genghisjahn
+
+
+* Database Integration Tests With Docker
+
+* Some background
+
+I started off as a Microsoft developer.
+
+Which meant I often worked with various version of:
+
+.image images/microsoft-sqlserver.jpg
+
+* One day, while copying my local files to production
+
+* I learned about TDD, Test Driven Development
+
+It sounded great.
+I started using it.
+I tried to get the rest of the group to use it.
+
+* I did not succeed
+
+The main reason was, in 2010, it was hard to unit test with a database.
+
+It was hard to integration test with a database.
+
+* Repeatable database tests are hard
+
+For me, I had to setup a "dev" MS SQL Server to run tests against.
+
+Multiple devs couldn't run tests at the same time.
+
+When the tests were over I had a database server full of test data.
+
+* 
