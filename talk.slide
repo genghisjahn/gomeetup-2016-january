@@ -1,0 +1,75 @@
+Hello, Gophers
+Philly GoMeetup
+12 Jan 2016
+
+Jon Wear
+DramaFever.com
+@genghisjahn
+
+
+* Database Integration Tests With Docker
+
+* Some background
+
+I started off as a Microsoft developer.
+
+Which meant I often worked with various version of:
+
+.image images/microsoft-sqlserver.jpg
+
+* One day, while copying my local files to production
+
+* I learned about TDD, Test Driven Development
+
+It sounded great.
+I started using it.
+I tried to get the rest of the group to use it.
+
+* I did not succeed
+
+The main reason was, in 2010, it was hard to unit test with a database.
+
+It was hard to integration test with a database.
+
+* Repeatable database tests are hard
+
+For me, I had to setup a "dev" MS SQL Server to run tests against.
+
+Multiple devs couldn't run tests at the same time.
+
+When the tests were over I had a database server full of test data.
+
+* Then along comes...
+
+.image images/docker.png
+
+* Which was promising but...
+
+I had a terrible time understanding it.
+
+Then I read a blog post [[https://twitter.com/kelseyhightower][Kelsey Hightower]]'s: [[https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.r15mp16yn][Twelve Fractured Apps]]
+
+(You should read this if you haven't)
+
+And things started to click...
+
+* My big take aways
+
+I don't have to know Puppet or Ansible or even Docker Files.
+I can make & create containers from within Go.
+
+"...good old fashion programming. Each of the issues...can be handled directly by the application.  Don’t get me wrong, using an entrypoint script is ok for applications you don’t have control over, but when you rely on custom entrypoint scripts for applications you write, you add another layer of complexity to the deployment process for no good reason."
+- Kelsey Hightower
+
+* The start order shouldn't matter
+
+"Do not require anyone to start your application in a specific order. I’ve seen too many deployment guides warn users to deploy an application after the database because the application would fail to start.
+Stop doing this."
+
+* Example DB Connect Backoff
+
+.code -numbers backoff.go
+
+* Example code...
+
+Be kind...
